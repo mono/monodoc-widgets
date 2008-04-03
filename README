@@ -1,0 +1,23 @@
+Monodoc.Widgets is a library of Gtk# widgets to display and edit
+monodoc documentation catalogs.
+
+Building:
+--------
+
+The standard autotools process:
+
+    ./configure
+    make
+    make install
+
+Subversion users substitute autogen.sh for configure and must have
+automake and autoconf installed.
+
+Hacking:
+--------
+
+Anyone wishing to help with the effort should state their intentions on
+mono-docs-list prior to starting.  Development is very brisk ATM, and
+code duplication makes the maintainer cranky, especially when there is 
+so much work to be done.  
+

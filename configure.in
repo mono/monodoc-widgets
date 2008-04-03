@@ -1,0 +1,56 @@
+AC_INIT([monodoc-widgets], [0.1])
+AC_CONFIG_SRCDIR([README])
+AM_INIT_AUTOMAKE([tar-ustar])
+AM_MAINTAINER_MODE
+
+AC_PROG_INSTALL
+
+ASSEMBLY_VERSION="0.0.0.0"
+AC_SUBST(ASSEMBLY_VERSION)
+
+AC_PATH_PROG(GMCS, gmcs, no)
+CS="C#"
+if test "x$GMCS" = "xno"  ; then
+	dnl AC_MSG_ERROR([You need to install a C# compiler])
+	AC_MSG_ERROR([No $CS compiler found])
+fi
+AC_SUBST(GMCS)
+
+AC_PATH_PROG(RUNTIME, mono, no)
+if test "x$RUNTIME" = "xno" ; then
+	AC_MSG_ERROR([No runtime found])
+fi
+AC_SUBST(RUNTIME)
+
+AC_PATH_PROG(RESGEN, resgen, no)
+if test "x$RESGEN" = "xno"  ; then
+	AC_MSG_ERROR([resgen not found in $PATH])
+fi
+AC_SUBST(RESGEN)
+
+PKG_CHECK_MODULES(MONODOC, monodoc)
+AC_SUBST(MONODOC_LIBS)
+
+AC_PATH_PROG(MONODOCER, monodocer, no)
+AC_PATH_PROG(MDASSEMBLER, mdassembler, no)
+AC_SUBST(MONODOCER)
+AC_SUBST(MDASSEMBLER)
+
+GTK_SHARP_REQUIRED_VERSION="2.12.0"
+PKG_CHECK_MODULES(GTK_SHARP, gtk-sharp-2.0 >= $GTK_SHARP_REQUIRED_VERSION)
+AC_SUBST(GTK_SHARP_LIBS)
+
+AC_OUTPUT([
+Makefile
+doc/Makefile
+src/Makefile
+src/AssemblyInfo.cs
+sample/Makefile
+])
+
+echo "---"
+echo "Configuration summary"
+echo ""
+echo "   * Installation prefix = $prefix"
+echo "   * C# compiler = $GMCS"
+echo ""

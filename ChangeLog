@@ -1,0 +1,14 @@
+2008-04-03  Mike Kestner  <mkestner@novell.com>
+
+	* initial checkin.  DocTree widget is feature-complete for
+	on-disk catalog navigation.  Layout and Painting in DocView with
+	limited Mouse event forwarding to the item hierarchy.  Items include
+	a generic LabelItem, HeadingItem, and LinkItem. A BannerItem with 
+	heading and links to parent docs. A MarkupItem which handles raw text
+	and simple markup like see/paramref/typeparamref. KitchenSinkItem
+	which will eventually handle the tangled mess of nested para/code/SPAN
+	and so on elements.  And SummaryTableItem which handles the
+	Name/Summary tables seen on Namespace, Type, Members, and Ctor/Method
+	pages.  Node pages implemented so far are the toplevel Catalog node
+	and the Namespace node. 
+

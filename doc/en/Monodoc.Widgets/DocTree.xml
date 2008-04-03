@@ -1,0 +1,32 @@
+<Type Name="DocTree" FullName="Monodoc.Widgets.DocTree">
+  <TypeSignature Language="C#" Value="public class DocTree : Gtk.TreeView" />
+  <AssemblyInfo>
+    <AssemblyName>Monodoc.Widgets</AssemblyName>
+    <AssemblyVersion>0.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Gtk.TreeView</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>To be added.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DocTree (string catalog_dir);" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="catalog_dir" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="catalog_dir">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
