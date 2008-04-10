@@ -60,9 +60,10 @@ namespace Monodoc.Widgets {
 				if (item == value)
 					return;
 				item = value;
-				if (item != null)
+				if (item != null) {
 					item.Update (Allocation.Width);
-				SetSizeRequest (item.Size.Width, item.Size.Height);
+					SetSizeRequest (item.Size.Width, item.Size.Height);
+				}
 				QueueDraw ();
 			}
 		}
