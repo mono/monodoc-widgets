@@ -62,6 +62,7 @@ namespace Monodoc.Widgets {
 				item = value;
 				if (item != null)
 					item.Update (Allocation.Width);
+				SetSizeRequest (item.Size.Width, item.Size.Height);
 				QueueDraw ();
 			}
 		}
@@ -110,6 +111,14 @@ namespace Monodoc.Widgets {
 			base.OnSizeAllocated (allocation);
 			if (item != null)
 				item.Update (allocation.Width);
+		}
+
+		protected override void OnSizeRequested (ref Gtk.Requisition requisition)
+		{
+			if (Item == null)
+				return;
+			requisition.Width = Item.Size.Width;
+			requisition.Height = Item.Size.Height;
 		}
 
 		protected override bool OnButtonPressEvent (Gdk.EventButton ev)
