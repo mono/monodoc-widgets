@@ -66,7 +66,7 @@ namespace Monodoc.Widgets {
 				height += view.LineHeight;
 			heading.Update (width);
 			heading.Location = new Gdk.Point (Padding, height);
-			sz.Height = height + heading.Size.Height + 2 * Padding;
+			sz.Height = height + heading.Size.Height + Padding;
 		}
 
 		protected override void OnPaint (Gdk.Drawable win, Gdk.Point offset, Gdk.Rectangle clip)

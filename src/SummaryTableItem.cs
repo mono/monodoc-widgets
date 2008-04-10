@@ -161,7 +161,7 @@ namespace Monodoc.Widgets {
 		protected override void OnPaint (Gdk.Drawable win, Gdk.Point offset, Gdk.Rectangle clip)
 		{
 			Gdk.Point adj = Globalize (offset);
-			Gtk.Style.PaintExpander (view.Style, win, Gtk.StateType.Normal, clip, view, null, adj.X + 10, adj.Y + 10, expanded ? Gtk.ExpanderStyle.Expanded : Gtk.ExpanderStyle.Collapsed);
+			Gtk.Style.PaintExpander (view.Style, win, Gtk.StateType.Normal, clip, view, null, adj.X + 10, adj.Y + 6, expanded ? Gtk.ExpanderStyle.Expanded : Gtk.ExpanderStyle.Collapsed);
 			label.Paint (win, adj, clip);
 
 			if (!expanded)

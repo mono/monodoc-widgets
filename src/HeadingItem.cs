@@ -53,6 +53,8 @@ namespace Monodoc.Widgets {
 			}
 		}
 
+		Gdk.Point ink_offset;
+
 		public override void Update (int width)
 		{
 			Layout layout = view.Layout;
@@ -62,6 +64,7 @@ namespace Monodoc.Widgets {
 			layout.SetText (heading);
 			Rectangle ink, log;
 			layout.GetPixelExtents (out ink, out log);
+			ink_offset = new Gdk.Point (ink.X, ink.Y);
 			layout.FontDescription = null;
 			sz.Width = ink.Width;
 			sz.Height = ink.Height;
@@ -74,7 +77,7 @@ namespace Monodoc.Widgets {
 			layout.Alignment = Pango.Alignment.Left;
 			layout.Width = -1;
 			layout.SetText (heading);
-			win.DrawLayout (view.Style.TextGC (0), Location.X + offset.X, Location.Y + offset.Y, layout);
+			win.DrawLayout (view.Style.TextGC (0), Location.X + offset.X - ink_offset.X, Location.Y + offset.Y - ink_offset.Y, layout);
 			layout.FontDescription = null;
 		}
 

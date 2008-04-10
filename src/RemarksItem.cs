@@ -42,7 +42,6 @@ namespace Monodoc.Widgets {
 			contents = new KitchenSinkItem (view, elem);
 		}
 
-		const int text_padding = 6;
 		const int item_offset = 14;
 
 		public override void Update (int width)
@@ -51,7 +50,7 @@ namespace Monodoc.Widgets {
 			label.Update (width);
 			label.Location = Gdk.Point.Zero;
 			width -= item_offset;
-			int height = label.Size.Height + text_padding;
+			int height = label.Size.Height + Padding;
 			contents.Update (width);
 			contents.Location = new Gdk.Point (item_offset, height);
 			sz.Height = height + contents.Size.Height;

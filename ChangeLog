@@ -1,5 +1,16 @@
 2008-04-10  Mike Kestner  <mkestner@novell.com>
 
+	* src/BannerItem.cs: 
+	* src/HeadingItem.cs: 
+	* src/LabelItem.cs: 
+	* src/LinkItem.cs: 
+	* src/MarkupItem.cs: 
+	* src/RemarksItem.cs: 
+	* src/SummaryTableItem.cs: Layout tweaks adapting to ink rect 
+	offsets.
+
+2008-04-10  Mike Kestner  <mkestner@novell.com>
+
 	* src/DocView.cs : add size request support to enable scrolling.
 
 2008-04-03  Mike Kestner  <mkestner@novell.com>

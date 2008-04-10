@@ -109,6 +109,8 @@ namespace Monodoc.Widgets {
 			attrs.Insert (attr);
 		}
 
+		Gdk.Point ink_offset;
+
 		public override void Update (int width)
 		{
 			sz.Width = width;
@@ -120,6 +122,7 @@ namespace Monodoc.Widgets {
 			layout.SetText (text);
 			Rectangle ink, log;
 			layout.GetPixelExtents (out ink, out log);
+			ink_offset = new Gdk.Point (ink.X, ink.Y);
 			sz.Height = ink.Height;
 			layout.Attributes = null;
 		}
@@ -132,7 +135,7 @@ namespace Monodoc.Widgets {
 			if (attrs != null)
 				layout.Attributes = attrs;
 			layout.SetText (text);
-			win.DrawLayout (view.Style.TextGC (0), Location.X + offset.X, Location.Y + offset.Y, layout);
+			win.DrawLayout (view.Style.TextGC (0), Location.X + offset.X - ink_offset.X, Location.Y + offset.Y - ink_offset.Y, layout);
 			layout.Attributes = null;
 		}
 
